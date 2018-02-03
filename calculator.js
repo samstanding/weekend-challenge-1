@@ -31,10 +31,9 @@ $('#salaryIn').val('');
     var clickedIndex = $(this).data('id');
     //take that employee out of our data array
     employeeData.splice(clickedIndex, 1);
-    //run display and calculate functions again
+    //run display and calculate functions to account for change
     displayEmployees();
     calcSal(employeeData);
-    //cross-fingers
   });
 
 
@@ -52,15 +51,14 @@ function displayEmployees () {
     //create an outputString that prints data objects to DOM
     var outputString = '<li>';
     outputString += employeeData[i].lastName + ', ';
-    outputString += employeeData[i].firstName + ', ';
-    outputString += employeeData[i].employeeNumber + ', ';
-    outputString += employeeData[i].jobTitle + ', ';
-    outputString += employeeData[i].salary;
+    outputString += employeeData[i].firstName;
+    //i think i only need to display first and last name
+    // outputString += employeeData[i].employeeNumber + ', ';
+    // outputString += employeeData[i].jobTitle + ', ';
+    // outputString += employeeData[i].salary;
     outputString += '<button class="deleteButton" data-id="' + i + '">Delete Employee</button></li>';
     output.append(outputString);
-
   }
-
 }
 
 function calcSal (arr) {
@@ -68,9 +66,7 @@ function calcSal (arr) {
     var salaryArray = [];
     for (var i= 0; i<arr.length; i++) {
       //adding this little condition to allow second conditional to work
-      if (arr[i] !== 0 ) {
-      salaryArray.push(parseInt(arr[i].salary)/12);
-    }
+        salaryArray.push(parseInt(arr[i].salary)/12);
     }
     console.log(salaryArray);
     var salaryAvg;
@@ -78,9 +74,9 @@ function calcSal (arr) {
     if (salaryArray.length === 0) {
       salaryAvg = 0;
     } else {
-    //using reduce method to get the sum of my monthly salary
-     salaryAvg = salaryArray.reduce(function (a, b) {
-      return (a + b);
+    //using reduce method to get the sum of my monthly salaries
+        salaryAvg = salaryArray.reduce(function (a, b) {
+          return (a + b);
     });
     }
     //target my output by ID
