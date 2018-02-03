@@ -2,6 +2,7 @@
 var employeeData = [];
 
 $(document).ready(function (){
+  //create a function that stores and returns data upon inputs
 $('#submitButton').on('click',function () {
   //new employee objects
   var newEmployee = {
@@ -13,7 +14,7 @@ $('#submitButton').on('click',function () {
 };
 //push employee info into data array
 employeeData.push(newEmployee);
-
+//call display employees
 displayEmployees();
 calcSal(employeeData);
 //empty inputs
@@ -24,10 +25,10 @@ $('#jobTitleIn').val('');
 $('#salaryIn').val('');
 
 }); // submit button function
-//call displayEmployees
 
 
-});
+
+}); //ends docReady function
 
 //create a function that displays the employee data you have
 function displayEmployees () {
@@ -38,6 +39,7 @@ function displayEmployees () {
   output.empty();
   //create a loop go through employeeArray
   for (var i = 0; i<employeeData.length; i++) {
+    //create an outputString that prints data objects to DOM
     var outputString = '<li>';
     outputString += employeeData[i].lastName + ', ';
     outputString += employeeData[i].firstName + ', ';
@@ -46,7 +48,6 @@ function displayEmployees () {
     outputString += employeeData[i].salary;
     outputString += '<button class="deleteButton" data-id="' + i + '">Delete Employee</button></li>';
     output.append(outputString);
-
 
   }
 
