@@ -25,7 +25,17 @@ $('#jobTitleIn').val('');
 $('#salaryIn').val('');
 
 }); // submit button function
-
+  //build deletebutton functionality
+  $('.container').on('click', '.deleteButton', function () {
+    //create a variable to store the clicked employees' button
+    var clickedIndex = $(this).data('id');
+    //take that employee out of our data array
+    employeeData.splice(clickedIndex, 1);
+    //run display and calculate functions again
+    displayEmployees();
+    calcSal(employeeData);
+    //cross-fingers
+  });
 
 
 }); //ends docReady function

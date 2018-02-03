@@ -11,12 +11,12 @@ Collect User Inputs
 -stub out interface (what would it look like when data is collected?)
 -create a SUBMIT button that clears the input fields
  -store inputted data
- -create a function that calculates and displays monthly costs-- function can be inbedded in the above display employee data function but tied to a separate div... i think
+ -create a function that calculates and displays monthly costs--
 -return info i need onto the DOM
 
 Create Logic for monthly costs
---develop a function that sums total annual salaries and divides by 12
--- Add that info to the DOM
+--develop a function that divides annual salaries by 12 and sums
+-- Add that info to the DOM-- check
 
 Create a button that Removes an employee
 -- Will probably need to use a data tag that tells my functions what employee is being deleted:
