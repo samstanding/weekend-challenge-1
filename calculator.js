@@ -67,19 +67,28 @@ function calcSal (arr) {
     //creating an array to put the salary info- so i can perform a reduce
     var salaryArray = [];
     for (var i= 0; i<arr.length; i++) {
+      //adding this little condition to allow second conditional to work
+      if (arr[i] !== 0 ) {
       salaryArray.push(parseInt(arr[i].salary)/12);
     }
+    }
     console.log(salaryArray);
+    var salaryAvg;
+    //adding conditional to account for zero employees
+    if (salaryArray.length === 0) {
+      salaryAvg = 0;
+    } else {
     //using reduce method to get the sum of my monthly salary
-     var salaryAvg = salaryArray.reduce(function (a, b) {
+     salaryAvg = salaryArray.reduce(function (a, b) {
       return (a + b);
     });
+    }
     //target my output by ID
     var salOut = $('#costs');
     //empty output
     salOut.empty();
     //create an output
-    var salOutputString ='<p>'  + 'Monthly Salary Cost: $' + salaryAvg.toFixed(2) + '</p>';
+    var salOutputString ='<p>' + 'Monthly Salary Cost: $' + salaryAvg.toFixed(2) + '</p>';
     //append salOut w/average
     salOut.append(salOutputString);
 
