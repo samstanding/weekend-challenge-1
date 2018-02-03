@@ -11,7 +11,7 @@ Collect User Inputs
 -stub out interface (what would it look like when data is collected?)
 -create a SUBMIT button that clears the input fields
  -store inputted data
- -create a function that calculates and displays monthly costs
+ -create a function that calculates and displays monthly costs-- function can be inbedded in the above display employee data function but tied to a separate div... i think
 -return info i need onto the DOM
 
 Create Logic for monthly costs
