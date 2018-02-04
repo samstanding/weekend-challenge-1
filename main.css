@@ -1,0 +1,11 @@
+body {
+  background-image: url("http://static.tumblr.com/udhhl6f/Rscmb72m1/fullscreen_capture_8192012_91729_am.bmp.jpg");
+  background-size: cover;
+}
+
+.content {
+  width: 800px;
+  margin: auto;
+  background-color: white;
+  font-family: Georgia, serif;
+}
