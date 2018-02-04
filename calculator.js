@@ -3,26 +3,26 @@ var employeeData = [];
 
 $(document).ready(function (){
   //create a function that stores and returns data upon inputs
-$('#submitButton').on('click',function () {
+  $('#submitButton').on('click',function () {
   //new employee objects
-  var newEmployee = {
-    firstName: $('#firstNameIn').val(),
-    lastName: $('#lastNameIn').val(),
-    employeeNumber: $('#employeeNumberIn').val(),
-    jobTitle: $('#jobTitleIn').val(),
-    salary: $('#salaryIn').val()
-};
+    var newEmployee = {
+      firstName: $('#firstNameIn').val(),
+      lastName: $('#lastNameIn').val(),
+      employeeNumber: $('#employeeNumberIn').val(),
+      jobTitle: $('#jobTitleIn').val(),
+      salary: $('#salaryIn').val()
+  };
 //push employee info into data array
-employeeData.push(newEmployee);
-//call display employees
-displayEmployees();
-calcSal(employeeData);
+  employeeData.push(newEmployee);
+//call display employees and salary data functions
+  displayEmployees();
+  calcSal(employeeData);
 //empty inputs
-$('#firstNameIn').val('');
-$('#lastNameIn').val('');
-$('#employeeNumberIn').val('');
-$('#jobTitleIn').val('');
-$('#salaryIn').val('');
+  $('#firstNameIn').val('');
+  $('#lastNameIn').val('');
+  $('#employeeNumberIn').val('');
+  $('#jobTitleIn').val('');
+  $('#salaryIn').val('');
 
 }); // submit button function
   //build deletebutton functionality
@@ -35,7 +35,6 @@ $('#salaryIn').val('');
     displayEmployees();
     calcSal(employeeData);
   });
-
 
 }); //ends docReady function
 
