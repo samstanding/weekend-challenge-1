@@ -51,10 +51,9 @@ function displayEmployees () {
     var outputString = '<li>';
     outputString += employeeData[i].lastName + ', ';
     outputString += employeeData[i].firstName;
-    //i think i only need to display first and last name
-    // outputString += employeeData[i].employeeNumber + ', ';
-    // outputString += employeeData[i].jobTitle + ', ';
-    // outputString += employeeData[i].salary;
+    outputString += employeeData[i].employeeNumber + ', ';
+    outputString += employeeData[i].jobTitle + ', ';
+    outputString += employeeData[i].salary;
     outputString += '<button class="deleteButton" data-id="' + i + '">Delete Employee</button></li>';
     output.append(outputString);
   }
